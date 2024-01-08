@@ -1,6 +1,6 @@
-﻿using Goodleap.Employee.Repository.Models;
+﻿using Goodleap.Employee.Core.Models;
 
-namespace Goodleap.Employee.Repository.Permissions
+namespace Goodleap.Employee.Core.Permissions
 {
     public interface IPermissionRepository
     {

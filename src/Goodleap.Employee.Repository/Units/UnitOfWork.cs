@@ -1,12 +1,14 @@
-﻿using Goodleap.Employee.Repository.Models;
-using Goodleap.Employee.Repository.Permissions;
+﻿using Goodleap.Employee.Core.EmployeePermissions;
+using Goodleap.Employee.Core.Models;
+using Goodleap.Employee.Core.Permissions;
 
-namespace Goodleap.Employee.Repository.Units
+namespace Goodleap.Employee.Core.Units
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly EmployeeDbContext _employeeDbContext;
         private IPermissionRepository? _permissionRepository;
+        private IEmployeePermissionRepository? _employeePermissionRepository;
 
         public UnitOfWork(EmployeeDbContext employeeDbContext)
         {
@@ -23,6 +25,19 @@ namespace Goodleap.Employee.Repository.Units
                 }
 
                 return _permissionRepository;
+            }
+        }
+
+        public IEmployeePermissionRepository employeePermissionRepository
+        {
+            get
+            {
+                if (_employeePermissionRepository == null)
+                {
+                    _employeePermissionRepository = new EmployeePermissionRepository(_employeeDbContext);
+                }
+
+                return _employeePermissionRepository;
             }
         }
 

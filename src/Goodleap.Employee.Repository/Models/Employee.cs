@@ -1,4 +1,4 @@
-﻿namespace Goodleap.Employee.Repository.Models
+﻿namespace Goodleap.Employee.Core.Models
 {
     public class Employee
     {

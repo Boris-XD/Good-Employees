@@ -5,9 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Api", "src\Goodleap.Employee.Api\Goodleap.Employee.Api.csproj", "{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Repository", "src\Goodleap.Employee.Repository\Goodleap.Employee.Repository.csproj", "{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Service", "src\Goodleap.Employee.Service\Goodleap.Employee.Service.csproj", "{B866936B-B930-43BB-8962-4DF072FD0AFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Core", "src\Goodleap.Employee.Repository\Goodleap.Employee.Core.csproj", "{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B866936B-B930-43BB-8962-4DF072FD0AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B866936B-B930-43BB-8962-4DF072FD0AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B866936B-B930-43BB-8962-4DF072FD0AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B866936B-B930-43BB-8962-4DF072FD0AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

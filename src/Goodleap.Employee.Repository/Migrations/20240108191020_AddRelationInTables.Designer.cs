@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Goodleap.Employee.Core.Migrations
 {
     [DbContext(typeof(EmployeeDbContext))]
-    [Migration("20240108144535_AddInitialModels")]
-    partial class AddInitialModels
+    [Migration("20240108191020_AddRelationInTables")]
+    partial class AddRelationInTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,10 +43,23 @@ namespace Goodleap.Employee.Core.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("Goodleap.Employee.Repository.Models.EmployeePermission", b =>
+                {
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("EmployeeId");
+
+                    b.ToTable("EmployeePermissions");
+                });
+
             modelBuilder.Entity("Goodleap.Employee.Repository.Models.Permission", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("EmployeePermissionEmployeeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -54,6 +67,8 @@ namespace Goodleap.Employee.Core.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EmployeePermissionEmployeeId");
 
                     b.ToTable("Permissions");
                 });
@@ -71,6 +86,29 @@ namespace Goodleap.Employee.Core.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PermissionTypes");
+                });
+
+            modelBuilder.Entity("Goodleap.Employee.Repository.Models.EmployeePermission", b =>
+                {
+                    b.HasOne("Goodleap.Employee.Repository.Models.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Goodleap.Employee.Repository.Models.Permission", b =>
+                {
+                    b.HasOne("Goodleap.Employee.Repository.Models.EmployeePermission", null)
+                        .WithMany("Permissions")
+                        .HasForeignKey("EmployeePermissionEmployeeId");
+                });
+
+            modelBuilder.Entity("Goodleap.Employee.Repository.Models.EmployeePermission", b =>
+                {
+                    b.Navigation("Permissions");
                 });
 #pragma warning restore 612, 618
         }

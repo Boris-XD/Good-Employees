@@ -1,7 +1,7 @@
-﻿using Goodleap.Employee.Repository.Models;
+﻿using Goodleap.Employee.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Goodleap.Employee.Repository.Permissions
+namespace Goodleap.Employee.Core.Permissions
 {
     public class PermissionRepository : IPermissionRepository
     {
@@ -13,7 +13,9 @@ namespace Goodleap.Employee.Repository.Permissions
 
         public async Task<List<Permission>> GetAllPermissionsAsync()
         {
-            return await _employeeDbContext.Permissions.ToListAsync();
+            return await _employeeDbContext.Permissions
+                .Include(permission => permission.PermissionType)
+                .ToListAsync();
         }
 
         public async Task<Permission> GetPermissionAsync(Guid permissionId)

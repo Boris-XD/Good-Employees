@@ -1,21 +1,24 @@
-﻿using Goodleap.Employee.Service.Permissions;
+﻿using Goodleap.Employee.Api.Business.Queries.Permissions;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Goodleap.Employee.Api.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class PermissionController : ControllerBase
     {
-        private readonly IPermissionService _permissionService;
+        private readonly IMediator _mediator;
 
-        public PermissionController(IPermissionService permissionService)
+        public PermissionController(IMediator mediator)
         {
-            _permissionService = permissionService;
+            _mediator = mediator;
         }
 
         [HttpGet("all")]
         public async Task<IActionResult> GetAllPermission()
         {
-            return Ok(await _permissionService.GetAllPermission());
+            return Ok(await _mediator.Send(new GetAllPermissionsCommand()));
         }
     }
 }

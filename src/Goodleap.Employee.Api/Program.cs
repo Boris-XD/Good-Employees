@@ -1,9 +1,9 @@
-using Goodleap.Employee.Repository.Models;
-using Goodleap.Employee.Repository.Permissions;
-using Goodleap.Employee.Repository.Units;
-using Goodleap.Employee.Service.Permissions;
+using Goodleap.Employee.Core.EmployeePermissions;
+using Goodleap.Employee.Core.Models;
+using Goodleap.Employee.Core.Permissions;
+using Goodleap.Employee.Core.Units;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
-
 namespace Goodleap.Employee.Api
 {
     public class Program
@@ -19,15 +19,16 @@ namespace Goodleap.Employee.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-
-
             builder.Services
                 .AddDbContext<EmployeeDbContext>(
                     options => options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeDb")));
 
             builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
             builder.Services.AddTransient<IPermissionRepository, PermissionRepository>();
-            builder.Services.AddTransient<IPermissionService, PermissionService>();
+            builder.Services.AddTransient<IEmployeePermissionRepository, EmployeePermissionRepository>();
+
+            builder.Services.AddMediatR(typeof(Program).Assembly);
+
 
             var app = builder.Build();
 

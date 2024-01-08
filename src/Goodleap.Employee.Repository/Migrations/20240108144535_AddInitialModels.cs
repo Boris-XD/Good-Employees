@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Goodleap.Employee.Repository.Migrations
+namespace Goodleap.Employee.Core.Migrations
 {
     public partial class AddInitialModels : Migration
     {

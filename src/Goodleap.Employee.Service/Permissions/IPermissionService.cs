@@ -1,4 +1,4 @@
-﻿using Goodleap.Employee.Repository.Models;
+﻿using Goodleap.Employee.Core.Models;
 
 namespace Goodleap.Employee.Service.Permissions
 {
