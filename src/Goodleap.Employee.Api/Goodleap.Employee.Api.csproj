@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Goodleap.Employee.Repository\Goodleap.Employee.Core.csproj" />
+    <ProjectReference Include="..\Goodleap.Employee.Core\Goodleap.Employee.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,14 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Api", "src\Goodleap.Employee.Api\Goodleap.Employee.Api.csproj", "{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodleap.Employee.Core", "src\Goodleap.Employee.Repository\Goodleap.Employee.Core.csproj", "{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Goodleap.Employee.Api", "src\Goodleap.Employee.Api\Goodleap.Employee.Api.csproj", "{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9D0DA7A-9E9B-4E33-AB12-39056698BAE6}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Goodleap.Employee.Core", "src\Goodleap.Employee.Core\Goodleap.Employee.Core.csproj", "{1CFACE8D-B1E5-4A1B-AE88-B5E8B61EE22E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +22,10 @@ Global
 		{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D75FB4C-99D6-4998-8360-1B2AFE4ACFEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F1AF4EF-1FE6-4CC4-A985-B61C3108D75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CFACE8D-B1E5-4A1B-AE88-B5E8B61EE22E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CFACE8D-B1E5-4A1B-AE88-B5E8B61EE22E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CFACE8D-B1E5-4A1B-AE88-B5E8B61EE22E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CFACE8D-B1E5-4A1B-AE88-B5E8B61EE22E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
