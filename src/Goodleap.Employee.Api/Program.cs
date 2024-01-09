@@ -1,4 +1,5 @@
 using System.Reflection;
+using Goodleap.Employee.Api.Business.DomainEvents.Publishers;
 using Goodleap.Employee.Core.EmployeePermissions;
 using Goodleap.Employee.Core.Models;
 using Goodleap.Employee.Core.Permissions;
@@ -31,6 +32,7 @@ namespace Goodleap.Employee.Api
             builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
             builder.Services.AddTransient<IPermissionRepository, PermissionRepository>();
             builder.Services.AddTransient<IEmployeePermissionRepository, EmployeePermissionRepository>();
+            builder.Services.AddTransient<IPublishService, PublishService>();
 
             builder.Services.AddMediatR(typeof(Program).Assembly);
 
