@@ -19,4 +19,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Producers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Producers\" />
+  </ItemGroup>
 </Project>
