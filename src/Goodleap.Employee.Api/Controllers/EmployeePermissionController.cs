@@ -1,4 +1,5 @@
 ﻿using Goodleap.Employee.Api.Business.Commands.EmployeePermissions;
+using Goodleap.Employee.Api.Business.Queries.EmployeePermissions;
 using Goodleap.Employee.Api.DTOs;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -18,9 +19,13 @@ namespace Goodleap.Employee.Api.Controllers
         [HttpPatch("update")]
         public async Task<IActionResult> UpdateEmployeePermission([FromBody] UpdatePermissionDto updatePermissionDto)
         {
-            var command = new UpdatePermissionCommand(updatePermissionDto);
+            return Ok(await _mediator.Send(new UpdatePermissionCommand(updatePermissionDto)));
+        }
 
-            return Ok(await _mediator.Send(command));
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllEmployeePermission()
+        {
+            return Ok(await _mediator.Send(new GetAllEmployeePermissionCommand()));
         }
     }
 }

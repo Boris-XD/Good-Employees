@@ -1,5 +1,7 @@
 using System.Reflection;
 using Goodleap.Employee.Api.Business.DomainEvents.Publishers;
+using Goodleap.Employee.Api.Configuration;
+using Goodleap.Employee.Api.Services.ElasticSearch;
 using Goodleap.Employee.Core.EmployeePermissions;
 using Goodleap.Employee.Core.Models;
 using Goodleap.Employee.Core.Permissions;
@@ -35,6 +37,8 @@ namespace Goodleap.Employee.Api
             builder.Services.AddTransient<IPublishService, PublishService>();
 
             builder.Services.AddMediatR(typeof(Program).Assembly);
+
+            builder.Services.AddElasticSearch(builder.Configuration);
 
             ConfigureLogging();
 
